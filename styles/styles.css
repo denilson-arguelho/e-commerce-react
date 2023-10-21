@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@400;700&display=swap');
 
+:root{
+    --dsc-color-bg-primary: #E8E8E8;
+    --dsc-color-bg-secondary: #FFE500;
+    --dsc-color-bg-terciary: #636363;
+
+    --dsc-color-card-bg: #FFF;
+    --dsc-color-card-border: #d9d9d9;
+
+    --dsc-color-btn-primary: #3483FA;
+    --dsc-color-btn-inverse: #FFF;
+
+    --dsc-color-font-primary: #636363;
+    --dsc-color-font-secondary: #0CAF1D;
+    --dsc-color-font-tertiary: #fff;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -9,30 +24,47 @@
 
 html,
 body {
-    background: #E8E8E8;
+    background-color: var(--dsc-color-bg-primary);
+}
+/*-----------------------------------------------------------*/
+/*GENERIC STYLES*/
+.dsc-container{
+    color: var(--dsc-color-font-primary);
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+
+
+/*-----------------------------------------------------------*/
+/*HEADER STYLES*/
 header {
-    background: #FFE500;
+    background-color: var(--dsc-color-bg-secondary);
     height: 70px;
     display: flex;
     align-items: center;
 }
 
+nav a{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+nav h1{
+    font-size: 24px;
+    font-weight: 700;
+}
 a,
 a:hover {
     text-decoration: none;
     color: unset;
 }
 
-nav {
-    color: #636363;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.container {
+.cart-container-section {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -41,31 +73,29 @@ nav {
 
 
 
-.cart-container {
-    background-color: #fff;
-    border-radius: 4px;
-    border: 1px solid #D9D9D9;
-}
 
+/*-----------------------------------------------------------*/
+/*CARD STYLES*/
 .card-descricao {
     padding: 10px 20px 20px 20px;
 }
 
+/*-----------------------------------------------------------*/
+/*BOTTOM STYLES*/
 .line-bottom {
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px  solid var(--dsc-color-card-border);
 }
 
 .container-btn {
     display: flex;
 }
-
 .card-btn1,
 .card-btn2 {
     border-radius: 4px;
     width: 107px;
     height: 30px;
-    background-color: #636363;
-    color: #fff;
+    background-color: var(--dsc-color-bg-terciary);
+    color: var(--dsc-color-font-tertiary);
     font-size: 12px;
     font-weight: 700;
     padding: 0 20px;
@@ -83,8 +113,8 @@ nav {
 .btn-blue {
     width: 220px;
     height: 42px;
-    background-color: #3483FA;
-    color: #fff;
+    background-color: var(--dsc-color-btn-primary);
+    color: var(--dsc-color-font-tertiary);
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -97,8 +127,8 @@ nav {
 .btn-white {
     width: 220px;
     height: 42px;
-    background-color: #fff;
-    color: #3483FA;
+    background-color: var(--dsc-color-btn-inverse);
+    color: var(--dsc-color-btn-primary);
     font-size: 16px;
     display: flex;
     justify-content: center;
