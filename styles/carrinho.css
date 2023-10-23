@@ -5,9 +5,8 @@
 }
 
 .dsc-cart-total-container{
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0 20px 10px 20px;
+    text-align: left;
+    padding: 10px 20px;
 
 }
 
@@ -73,4 +72,13 @@
 .dsc-cart-qt{
     margin:  0 5px;
     color: #636363;
+}
+
+@media (min-width: 576px){
+    .dsc-cart-total-container{
+        display: flex;
+        justify-content: right;
+        padding: 0 20px 10px 20px;
+    
+    }
 }
