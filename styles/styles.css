@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@400;700&display=swap');
 
-:root{
+:root {
     --dsc-color-bg-primary: #E8E8E8;
     --dsc-color-bg-secondary: #FFE500;
     --dsc-color-bg-terciary: #636363;
@@ -15,7 +15,10 @@
     --dsc-color-font-secondary: #0CAF1D;
     --dsc-color-font-tertiary: #fff;
     --dsc-color-font-placeholder: #d9d9d9;
+
+    --dsc-color-error: #f33;
 }
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -28,18 +31,25 @@ body {
     background-color: var(--dsc-color-bg-primary);
 }
 
-main{
+main {
     padding: 0 20px;
 }
+
 /*-----------------------------------------------------------*/
 /*GENERIC STYLES*/
-.dsc-container{
+.dsc-container {
     color: var(--dsc-color-font-primary);
     width: 100%;
     margin: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.dsc-cart-container {
+    background-color: var(--dsc-color-card-bg);
+    border-radius: 4px;
+    border: 1px solid var(--dsc-color-card-border);
 }
 
 
@@ -54,15 +64,16 @@ header {
     padding: 0 5px;
 }
 
-nav a{
+nav a {
     font-size: 14px;
     font-weight: 700;
 }
 
-nav h1{
+nav h1 {
     font-size: 24px;
     font-weight: 700;
 }
+
 a,
 a:hover {
     text-decoration: none;
@@ -78,7 +89,7 @@ a:hover {
 }
 
 
-.dsc-category-container{
+.dsc-category-container {
     display: flex;
 }
 
@@ -92,13 +103,14 @@ a:hover {
 /*-----------------------------------------------------------*/
 /*BUTTOM STYLES*/
 .line-bottom {
-    border-bottom: 1px  solid var(--dsc-color-card-border);
+    border-bottom: 1px solid var(--dsc-color-card-border);
 }
 
 .dsc-category-container {
     display: flex;
     flex-wrap: wrap;
 }
+
 .card-btn1,
 .card-btn2 {
     border-radius: 4px;
@@ -113,19 +125,35 @@ a:hover {
     align-items: center;
     justify-content: center;
     margin-right: 20px;
-    margin-bottom:10px ;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
 .mb20 {
     margin-bottom: 20px;
 }
+
 .mt20 {
     margin-top: 20px;
 }
 
-.btn-blue {
+.dsc-btn{
     width: 100%;
+    height: 42px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.dsc-btn-blue{
+    background-color: var(--dsc-color-btn-primary);
+    color: var(--dsc-color-font-tertiary);
+}
+
+.btn-blue {
     height: 42px;
     background-color: var(--dsc-color-btn-primary);
     color: var(--dsc-color-font-tertiary);
@@ -135,11 +163,11 @@ a:hover {
     align-items: center;
     border-radius: 4px;
     cursor: pointer;
-
+    border: none;
 }
 
 .btn-white {
-    width: 100%;
+
     height: 42px;
     background-color: var(--dsc-color-btn-inverse);
     color: var(--dsc-color-btn-primary);
@@ -152,7 +180,7 @@ a:hover {
     cursor: pointer;
 }
 
-.btn-white-next-page{
+.btn-white-next-page {
     width: 100%;
     height: 42px;
     color: var(--dsc-color-btn-primary);
@@ -166,23 +194,26 @@ a:hover {
 }
 
 /*search bar styles*/
-.dsc-search-bar{
-    margin-top:20px;
+.dsc-search-bar {
+    margin-top: 20px;
     height: 40px;
     display: flex;
     justify-content: center;
-    color: var(--dsc-color-font-primary) ;
+    color: var(--dsc-color-font-primary);
 }
+
 /*seletor para tirar borda*/
-.dsc-search-bar button, .dsc-search-bar input{
+.dsc-search-bar button,
+.dsc-search-bar input {
     border: 1px solid var(--dsc-color-card-border);
 }
 
-.dsc-search-bar button{
+.dsc-search-bar button {
     width: 40px;
     color: var(--dsc-color-font-primary);
 }
-.dsc-search-bar input{
+
+.dsc-search-bar input {
     width: calc(100% - 80px);
     border-left: none;
     border-right: none;
@@ -193,33 +224,102 @@ a:hover {
 
 
 /*remover borda preta do input*/
-.dsc-search-bar input:focus{
+.dsc-search-bar input:focus {
     outline: none;
 }
 
-.dsc-search-bar input::placeholder{
-color: var(--dsc-color-font-placeholder);
-}
-.dsc-search-bar button[type="reset"]{
-    border-left: none;
-    border-radius:  0 4px 4px 0 ;
+.dsc-search-bar input::placeholder {
+    color: var(--dsc-color-font-placeholder);
 }
 
-.dsc-search-bar button[type="submit"]{
+.dsc-search-bar button[type="reset"] {
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+}
+
+.dsc-search-bar button[type="submit"] {
     border-right: none;
     border-radius: 4px 0 0 4px;
 }
 
 /*BUTTOM RESPONSIVE STYLES*/
 
-@media (min-width: 576px){
-    .btn-white{
+@media (min-width: 576px) {
+    .btn-white {
         width: 220px;
     }
 
-    .btn-blue{
+    .btn-blue {
         width: 220px;
     }
 }
 
 
+/*-----------------------------------------------------------*/
+/*form styles*/
+
+.dsc-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.dsc-form>h2 {
+    font-size: 16px;
+    color: var(--dsc-color-font-primary);
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+
+.dsc-form-controls {
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--dsc-color-card-border);
+    font-size: 16px;
+    padding: 0 20px;
+    color: var(--dsc-color-font-primary);
+}
+
+.dsc-form input::placeholder {
+    color: var(--dsc-color-font-placeholder);
+
+}
+
+.dsc-form input:focus {
+    outline: none;
+}
+
+.dsc-form button{
+    height: 42px;
+    width: 240px;
+    border-radius: 4px;
+}
+
+
+    
+.dsc-form-controls-container{
+    width: 100%;
+    display: grid;
+    gap: 20px;
+}
+
+.dsc-input-error{
+    border: 1px solid var(--dsc-color-error);
+}
+.dsc-form-error{
+    color: var(--dsc-color-error);
+    font-size: 12px;
+    padding-left: 4px;
+}
+@media (min-width: 576px){
+    .dsc-form>h2 {
+        font-size: 24px;
+    }
+
+   
+}
