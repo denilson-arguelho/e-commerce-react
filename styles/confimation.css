@@ -1,0 +1,24 @@
+
+.dsc-message-confirmation{
+    display: flex;
+    justify-content: center;
+}
+
+.dsc-message-confirmation span{
+    color: var(--dsc-color-font-primary);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (min-width: 576px){
+    .dsc-message-confirmation span{
+        font-size: 24px;
+        
+    }
+
+    .dsc-message-confirmation{
+        display: flex;
+        justify-content: left;
+    }
+}

@@ -80,6 +80,16 @@ a:hover {
     color: unset;
 }
 
+.dsc-logged-user > p{
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+}
+.dsc-logged-user > a{
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+}
 
 .cart-container-section {
     width: 100%;
@@ -316,6 +326,29 @@ a:hover {
     font-size: 12px;
     padding-left: 4px;
 }
+
+.dsc-select:invalid{
+    color: var(--dsc-color-font-placeholder);
+}
+
+.dsc-select option {
+    color: var(--dsc-color-font-primary);
+}
+.dsc-select option[disabled]{
+    display: none;
+}
+
+.dsc-textarea{
+    resize: none;
+    height: 128px;
+    padding: 10px;
+    
+}
+
+.dsc-textarea::placeholder{
+    color: var(--dsc-color-font-placeholder);
+}
+
 @media (min-width: 576px){
     .dsc-form>h2 {
         font-size: 24px;
